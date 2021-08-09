@@ -259,7 +259,12 @@
     }
     .main-content .content .address-mobile-number
     {
-        margin: 2%0%;
-        font-size: x-small;
+        margin: 3%0%;
+        font-size: small;
+    }
+    .main-content .content .profile-picture
+    {
+        height:100px;
+        width:200px;
     }
 }
