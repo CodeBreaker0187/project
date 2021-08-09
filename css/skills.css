@@ -214,4 +214,9 @@
         margin:1%2%;
         padding:1%10%;
     }
+    .main-content .content .profile-picture
+    {
+        height:100px;
+        width:200px;
+    }
 }
