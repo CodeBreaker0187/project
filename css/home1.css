@@ -1,0 +1,131 @@
+*
+{
+    margin:0% 0%;
+    padding: 0%0%;
+}
+
+.header
+{
+    background-color: #1f1f7a;
+    width: 100%;
+    display:block;
+}
+.header .logo
+{
+    height: auto;
+    width:120px;
+    max-width: 20%;
+    margin: 1%6%;
+}
+.header .links
+{
+    float:right;
+    margin: 3%0%;    
+    color:white;
+    padding:0%1%;
+    font-size: 1.2em;
+}
+.header .links a:active,.header .links a:visited,.header .links a:hover,.header .links a:link
+{
+    text-decoration: none;
+    color:white;
+}
+.header .dropdown
+{
+    float: right;
+    overflow: hidden;
+    background-color: #5c5cd6;
+    color:white;
+    margin: 3%1%;
+    padding:0%1%;
+}
+  .header .dropdown h3
+{
+    padding:2px 12px;
+    font-weight:normal;
+    font-size: 1.2em;
+}
+.header .dropdown .dropbtn
+{ 
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.header .dropdown:hover
+{
+    padding: 0%0%;
+    text-align: center;
+}
+.header .dropdown-content
+{
+    display: none;
+    position: relative;
+    background-color: #9999ff;
+    padding: 2%2%;
+}
+  
+.header .dropdown-content a
+{
+    float: center;
+    text-decoration: none;
+    display: block;
+    text-align:center;
+}
+.header .dropdown:hover .dropdown-content
+{
+    display: block;    
+}
+.header .dropdown-content a:link,.header .dropdown-content a:active,.header .dropdown-content a:visited,.header .dropdown-content a:hover
+{
+    color:white;
+}
+
+.main-content
+{
+    background-color: #0080ff;
+    color:white;
+    padding:4%4%;
+    
+}
+.main-content .contents
+{
+    display: inline-block;
+}
+.main-content .contents .img .profile-picture
+{
+    height:auto;
+    width:600px;
+    max-width:40%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.main-content .contents .name-email
+{
+    display: inline-block;
+    width:auto;
+    background-color: #8080ff;
+    text-align: left;
+    margin:-16%0%;
+    padding:0px 3px;
+    float:right;
+    
+}
+.main-content .contents .name-email .credentials
+{
+    font-weight: normal;
+}
+
+.main-content .contents .appropriate-text
+{
+    display: inline-block;
+    width:auto;
+    float:right;
+    background-color: #5a5a68;
+    
+    
+        
+}

@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital@1&display=swap');
+*
+{
+    margin:0% 0%;
+    padding: 0%0%;
+}
+
+.header
+{
+    background-color: #1f1f7a;
+    width: 100%;
+    display:block;
+}
+.header .logo
+{
+    height: auto;
+    width:120px;
+    max-width: 20%;
+    margin: 1%6%;
+}
+.main-content .heading-tag .heading
+{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+.header .links
+{
+    float:right;
+    margin: 3%0%;    
+    color:white;
+    padding:0%1%;
+    font-size: 1.2em;
+}
+.header .links a:active,.header .links a:visited,.header .links a:hover,.header .links a:link
+{
+    text-decoration: none;
+    color:white;
+}
+.header .dropdown
+{
+    float: right;
+    overflow: hidden;
+    background-color: #5c5cd6;
+    color:white;
+    margin: 3%1%;
+    padding:0%1%;
+}
+  .header .dropdown h3
+{
+    padding:2px 12px;
+    font-weight:normal;
+    font-size: 1.2em;
+}
+.header .dropdown .dropbtn
+{ 
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.header .dropdown:hover
+{
+    padding: 0%0%;
+    text-align: center;
+}
+.header .dropdown-content
+{
+    display: none;
+    position: relative;
+    background-color: #9999ff;
+    padding: 2%2%;
+}
+  
+.header .dropdown-content a
+{
+    float: center;
+    text-decoration: none;
+    display: block;
+    text-align:center;
+}
+.header .dropdown:hover .dropdown-content
+{
+    display: block;    
+}
+.header .dropdown-content a:link,.header .dropdown-content a:active,.header .dropdown-content a:visited,.header .dropdown-content a:hover,.header .dropdown .dropbtn a
+{
+    color:white;
+    text-decoration: none;
+}
+.main-content
+{
+    background-color: #0080ff;
+    color:white;
+    padding:4%1%; 
+    align-items: center;
+}
+.main-content .content
+{
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.main-content .content .profile-picture
+{
+    height:200px;
+    width:300px;
+    max-width:40%;
+    float:left;
+    padding:0%1%;
+}
+.main-content .content .name-email
+{
+    display: inline-block;
+    width:auto;
+    background-color: #8080ff;
+    text-align: left;
+    margin: top 50%;
+    padding:0px 3px;
+    vertical-align: middle;
+    
+}
+.main-content .otherinfo
+{   display:block;
+    margin:-30px 16%;
+    
+    padding:1%2%;
+    background-color: #809fff;
+}
+.main-content .heading-tag
+{
+    display: flex;
+    justify-content: center;
+}
+.main-content .heading
+{
+    padding:1%2%;
+    text-align: center;
+    background-color: #0000ff;
+    display: inline;
+}
+.main-content .game-content
+{
+    margin:1%2%;
+    padding:1%1%;
+    background-color: cornflowerblue;
+    display:flex;
+    justify-content: center;
+    
+}
+.main-content .game-content form
+{
+    width:30%;
+}
+.main-content .game-content form label,.main-content .game-content form input
+{
+    margin:1%4%;
+}
+.main-content .game-content form legend
+{
+    text-align: center;
+}
+.main-content .game-content form button
+{
+    margin:1%2%;
+    padding:1%1%;
+}
+.main-content .game-content form .guessbtn
+{
+    float:left;
+}
+.main-content .game-content form .restartbtn
+{
+    float:right;
+}
+.main-content .game-content .message-box
+{
+    margin:4%5%;
+}
+.main-content .message-box-content
+{
+    margin:-2%2%;
+    padding:1%1%;
+    background-color: cornflowerblue;
+    
+}
+.main-content .message-box-content #message-box
+{
+    display: inline-block;
+   margin:0%40%;
+   padding:1%1%;
+   width:20%;
+    
+}
+.footer
+{
+    background-color: #00004d;
+    padding:2%2%;
+    color:white;
+}
+.footer ul li .source-name
+{
+    display: block;
+    float:left;
+}
+.footer ul li .links
+{
+    float:right;
+}
+.footer h2
+{
+    font-weight: normal;
+} 
+.footer ul li img
+{
+    height:30px;
+    width:30px;
+    
+    margin-top: -50px;
+    margin-right:10px;
+ 
+}
+@media screen and (max-width: 1200px)
+{
+    .header .links
+    {
+        float:right;
+        margin: 3%0%;
+        padding-right: 2px;
+        padding-left: 4px;   
+        font-size: small;
+    }
+    .header .dropdown
+    {
+        margin: 3%0%;
+        padding:0%0%;
+    }
+    .header .dropdown h3
+    {
+        font-size: small;
+    }
+
+    
+    .main-content .otherinfo
+    {
+        margin:1%0%;
+        width:auto;
+    }
+      .main-content .content .name-email
+    {
+        margin:3%0%;
+     font-size: small;   
+    }
+     .main-content .skills-content 
+    {
+        margin:1%2%;
+        padding:1%10%;
+    }
+    .main-content .game-content form
+    {
+        width:80%;
+    }
+    .main-content .message-box-content #message-box
+    {
+        width:40%;
+        margin:0%30%;
+    }
+}
