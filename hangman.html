@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript">
+    var phrases;
+    var index;
+    var guess_phrase;
+    let no_of_guesses;
+    let wrong_guess;
+    let image_source;
+    function generatephrases()
+    {
+        no_of_guesses=0;
+        wrong_guess=0;
+        index=Math.floor((Math.random() *9) + 1);
+   
+        phrases=['A hot potato','A penny for your thoughts','Actions speak louder than words','Add insult to injury','At the drop of a hat','Back to the drawing board','Ball is in your court','Barking up the wrong tree','Be glad to see the back of','Beat around the bush'];
+        for(var i = 0;i<phrases.length;i++)
+        {
+            phrases[i]=phrases[i].toUpperCase();
+        }
+        guess_phrase=phrases[index];
+        document.getElementById('phrase').innerHTML=guess_phrase;
+    }
+    function count()
+    {
+        wrong_guess++;
+        image_source=`../images/hangman${wrong_guess.toString()}.jpg`;
+        document.getElementById("image").src=image_source;
+    }
+</script>
+<body onload="generatephrases()">
+    <p id="phrase"></p>
+    <div class="images">
+        <img id="image">
+        <button onclick="count()">Click me</button>
+    </div>
+</body>
+</html>
