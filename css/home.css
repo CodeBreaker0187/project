@@ -278,4 +278,9 @@
         margin:1%0%;
         width:auto;
     }
+     .main-content .content .profile-picture
+    {
+        height:100px;
+        width:200px;
+    }
   }
