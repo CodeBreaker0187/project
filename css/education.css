@@ -247,5 +247,10 @@
         margin:4%0%;
         font-size: small;   
     }
+    .main-content .content .profile-picture
+    {
+        height:100px;
+        width:200px;
+    }
     
 }
