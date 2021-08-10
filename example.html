@@ -4,201 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/hangman.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="hangman.css" media="screen" type="text/css">
     <script type="text/javascript" src="hangman.js"></script>
 
     <title>Hangman Game</title>
 </head>
-<script type="text/javascript">
-/*
-    var phrases;
-    var index;
-    var guess_phrase;
-    let no_of_guesses;
-    let wrong_guess;
-    let image_source;
-    let hidden_phrase='';
-    let indexes=new Array();
-    let correct_guesses;
-    let wrong_guessed_letters=new Array();
-    let go_on=false;
-    let clues=0;
-    function giveclue()
-    {
-        if(clues==0 && (correct_guesses<=guess_phrase.length)&&(wrong_guess<7))
-        {
-            let index1=hidden_phrase.indexOf('_');
-            let element=guess_phrase[index1];
-            hidden_phrase = hidden_phrase.replaceAt(index1, element);
-            indexes.push(index);
-            document.getElementById("hidden_letters").innerHTML=hidden_phrase;
-            correct_guesses++;
-            freeze_input_button();
 
-        }
-        clues++;
-    }
-    function generatephrases()
-    {
-        no_of_guesses=0;
-        wrong_guess=0;
-        hidden_phrase='';
-        correct_guesses=0;
-        index=Math.floor((Math.random() *9) + 1);
-   
-        phrases=['A hot potato','A penny for your thoughts','Actions speak louder than words','Add insult to injury','At the drop of a hat','Back to the drawing board','Ball is in your court','Barking up the wrong tree','Be glad to see the back of','Beat around the bush'];
-        guess_phrase=phrases[index];
-        guess_phrase=guess_phrase.toLocaleUpperCase();
-        //let str=`${guess_phrase}, length = ${guess_phrase.length}`;
-        //document.getElementById('phrase').innerHTML=str;
-        for(var i=0;i<guess_phrase.length;i++)
-        {
-            if(guess_phrase[i]==' ')
-            {
-                hidden_phrase+='\t';
-                correct_guesses++;
-            }
-            else
-            {
-                hidden_phrase+='_';
-            }
-        }
-        document.getElementById('hidden_letters').innerHTML=hidden_phrase;
-
-    }
-    function freeze_input_button()
-    {
-        if(wrong_guess>=7||(correct_guesses>=guess_phrase.length))
-        {
-            document.getElementById("inputbox").readOnly = true;
-            document.getElementById("addbtn").disabled = true;
-        }
-    }
-    function wrong_inputs()
-    {
-        
-        wrong_guess++;
-        if(wrong_guess<=7)
-        {
-            image_source=`../images/hangman${wrong_guess.toString()}.jpg`;
-            document.getElementById("image").src=image_source;
-        }
-
-        if(wrong_guess>=7)
-        {
-            freeze_input_button();
-            let str=`You have been hanged\nCorrect phrase is ${guess_phrase}\nTotal Number of wrong guesses are ${wrong_guess}`;
-            alert(str);
-        }
-
-    }
-    function Addelement()
-    {
-        let letter=document.getElementById("inputbox").value;
-        let ascii_value=letter.charCodeAt(0);
-        let check=false;
-        if((ascii_value>=65&&ascii_value<=90)||(ascii_value>=97&&ascii_value<=122))
-        {
-            check=true;
-        }
-        else
-        {
-            check=false;
-        }
-        if(check==false)
-        {
-            alert("Not an alphabet\nPlease enter a alphabet!!");
-        }
-        else
-        {
-            
-            replace_letter(letter);
-
-        }
-       
-    }
-    function replace_letter(letter)
-    {
-        let check=false;
-        let index=-1;
-        
-        let guessed=-1;
-        for(var i=0;i<guess_phrase.length;i++)
-        {
-            if(guess_phrase[i]==letter.toLocaleUpperCase())
-            {
-                if(indexes.includes(i)==false)
-                {
-                    check=true;
-                    index=i;
-                    guessed=-1;
-                    break;
-                }
-                else
-                {
-                    guessed=1;   
-                }
-                
-            }
-        }
-        if(index==-1)
-        {
-            check=false;
-        }
-        else
-        {
-            check=true;
-            
-        }
-        
-        
-        if(guessed==1)
-        {
-            let str=`${letter} is already guessed`;
-            alert(str);
-        }
-        if(check==true)
-        {
-            
-            //hidden_phrase[index]=letter;
-            //alert(hidden_phrase+"\t"+letter);
-            if(hidden_phrase[index]=='_')
-            {
-                hidden_phrase = hidden_phrase.replaceAt(index, letter);
-                indexes.push(index);
-                document.getElementById("hidden_letters").innerHTML=hidden_phrase;
-                correct_guesses++;
-                //document.getElementById("right_guess").innerHTML=correct_guesses;
-                if(correct_guesses==(guess_phrase.length))
-                {
-                    alert("Congratulations!!\nYou have guessed all hidden letters of phrase");
-                    freeze_input_button()
-                }
-            }
-           
-            
-
-        }
-        else
-        {
-            let str=`${letter} not in phrase\n\nTry Again!!`;
-            alert(str);
-            wrong_guessed_letters.push(letter);
-            str=`Wrong guessed letter's array is ${wrong_guessed_letters}`;
-            document.getElementById("wrong_letters").innerHTML=str;
-            wrong_inputs();
-        }
-        document.getElementById("inputbox").value='';
-    }
-    String.prototype.replaceAt = function (index, char)
-    {
-        let a = this.split("");
-        a[index] = char;
-        return a.join("");
-    }*/
-
-</script>
-<body onload="view_old_score()">
+<body onload="getdata()">
     <div class="header">
         <img src="../images/cocacola.png" class="logo" alt="LOGO">
         <div class="dropdown">
@@ -222,7 +34,7 @@
     </div>
     <div class="main-content">
         <div class="content">
-            <img src="../images/WhatsApp Image 2021-08-08 at 13.49.06.jpeg" alt="Profile Image" class="profile-picture">
+            <img src="images/WhatsApp Image 2021-08-08 at 13.49.06.jpeg" alt="Profile Image" class="profile-picture">
             <div class="name-email">
                 <h4>Name:  <span class="credentials">Prabhjot Kaur</span></h4>
                 <hr>
@@ -278,9 +90,9 @@
     <div class="footer">
         <ul>
             <li class="source-name" style="display: block;"><h2>Provided by ABC</h2></li>
-            <li class="links" style="display: block; float: right;"><a> <img src="../images/instagram-logo-svg-vector-for-print.svg" ></a></li>
-            <li class="links" style="display: block; float: right;"> <a></a><img src="../images/768px-LinkedIn_logo_initials.png" ></a></li>
-            <li class="links" style="display: block; float: right;"> <a></a><img src="../images/Facebook_icon_2013.svg.png" ></a></li>
+            <li class="links" style="display: block; float: right;"><a> <img src="images/instagram-logo-svg-vector-for-print.svg" ></a></li>
+            <li class="links" style="display: block; float: right;"> <a></a><img src="images/768px-LinkedIn_logo_initials.png" ></a></li>
+            <li class="links" style="display: block; float: right;"> <a></a><img src="images/Facebook_icon_2013.svg.png" ></a></li>
         </ul>
         <br>
         <br>
