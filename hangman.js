@@ -3,6 +3,7 @@
     let indexes=new Array();
     let wrong_guessed_letters=new Array();
     var storedItem=localStorage.getItem("storedItem");
+    var correct=0;
     function giveclue()
     {
         if(clues==0 && (correct_guesses<=guess_phrase.length)&&(wrong_guess<7))
@@ -54,7 +55,8 @@
         //phrases=['A hot potato','A penny for your thoughts','Actions speak louder than words','Add insult to injury','At the drop of a hat','Back to the drawing board','Ball is in your court','Barking up the wrong tree','Be glad to see the back of','Beat around the bush'];
         //guess_phrase=phrases[index];
         
-
+        image_source=`../images/hangman${wrong_guess.toString()}.jpg`;
+        document.getElementById("image").src=image_source;
         for(var i=0;i<guess_phrase.length;i++)
         {
             if(guess_phrase[i]==' ')
@@ -84,6 +86,48 @@
         {
             document.getElementById("inputbox").readOnly = true;
             document.getElementById("addbtn").disabled = true;
+            var person_name = prompt("Please enter your name:");
+            if(person_name!=null)
+            {
+                alert("Hello "+person_name+"Your score is "+correct.toString());
+                if(localStorage.getItem('user_name')==null)
+                {
+                    localStorage.setItem('user_name','[]');
+                    
+                }
+                
+                if(localStorage.getItem('user_score')==null)
+                {
+                    localStorage.setItem('user_score','[]');
+                }
+                var old_name=JSON.parse(localStorage.getItem('user_name'));
+                var old_score=JSON.parse(localStorage.getItem('user_score'));
+                old_name.push(person_name);
+                old_score.push(correct);
+                localStorage.setItem('user_name',JSON.stringify(old_name));
+                localStorage.setItem('user_score',JSON.stringify(old_score));
+                view_old_score();
+            }
+        }
+    }
+    function view_old_score()
+    {
+        if(localStorage.getItem("user_name")!=null)
+        {   var user_name=JSON.parse(localStorage.getItem('user_name'));
+            var user_score=JSON.parse(localStorage.getItem('user_score'));
+            var row;
+            var table=document.getElementById("mybody");
+            for(var i=0;i<localStorage.getItem("user_name").length;i++)
+            {   
+                if(user_name[i]!=null)
+                {
+                row=`<tr>
+                <td>${user_name[i]}</td>
+                <td>${user_score[i]}</td>
+                </tr>`;
+                table.innerHTML+=row;
+                }
+            }
         }
     }
     function wrong_inputs()
@@ -92,7 +136,7 @@
         wrong_guess++;
         if(wrong_guess<=7)
         {
-            image_source=`images/hangman${wrong_guess.toString()}.jpg`;
+            image_source=`../images/hangman${wrong_guess.toString()}.jpg`;
             document.getElementById("image").src=image_source;
         }
 
@@ -121,6 +165,7 @@
         if(check==false)
         {
             alert("Not an alphabet\nPlease enter a alphabet!!");
+            document.getElementById("inputbox").value="";
         }
         else
         {
@@ -164,11 +209,12 @@
             
         }
         
-        
+        var alerady_guessed=false;
         if(guessed==1)
         {
             let str=`${letter} is already guessed`;
             alert(str);
+            alerady_guessed=true;
         }
         if(check==true)
         {
@@ -181,6 +227,7 @@
                 indexes.push(index);
                 document.getElementById("hidden_letters").innerHTML=hidden_phrase;
                 correct_guesses++;
+                correct++;
                 //document.getElementById("right_guess").innerHTML=correct_guesses;
                 if(correct_guesses==(guess_phrase.length))
                 {
@@ -193,13 +240,16 @@
 
         }
         else
-        {
-            let str=`${letter} not in phrase\n\nTry Again!!`;
-            alert(str);
-            wrong_guessed_letters.push(letter);
-            str=`Wrong guessed letter's array is ${wrong_guessed_letters}`;
-            document.getElementById("wrong_letters").innerHTML=str;
-            wrong_inputs();
+        {   
+            if(alerady_guessed==false)
+            {
+                let str=`${letter} not in phrase\n\nTry Again!!`;
+                alert(str);
+                wrong_guessed_letters.push(letter);
+                str=`Wrong guessed letter's array is ${wrong_guessed_letters}`;
+                document.getElementById("wrong_letters").innerHTML=str;
+                wrong_inputs();
+            }
         }
         document.getElementById("inputbox").value='';
     }
