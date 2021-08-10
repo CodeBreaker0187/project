@@ -167,7 +167,22 @@
     
 
 }
-
+.main-content .scores_content
+{
+    margin:1%43%;
+}
+.main-content .scores_content .table tr,.main-content .scores_content .table td
+{
+    border-style: solid;
+}
+.main-content .scores_content .table td
+{
+    padding:2px 2px;
+}
+.main-content .scores_content .table
+{
+    border-collapse: collapse;
+}
 .footer
 {
     background-color: #00004d;
@@ -196,6 +211,7 @@
     margin-right:10px;
  
 }
+
 @media screen and (max-width: 1200px)
 {
     .header .links
@@ -270,8 +286,12 @@
     {
         margin:0%20%;
     }
-    .main-content  .game-content .game-inputs #
+    .main-content  .game-content .game-inputs input
     {
-        width:30%;
+        width:50%;
+    }
+    .main-content .scores_content
+    {
+        margin:1%20%;
     }
 }
