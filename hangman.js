@@ -55,7 +55,7 @@
         //phrases=['A hot potato','A penny for your thoughts','Actions speak louder than words','Add insult to injury','At the drop of a hat','Back to the drawing board','Ball is in your court','Barking up the wrong tree','Be glad to see the back of','Beat around the bush'];
         //guess_phrase=phrases[index];
         
-        image_source=`../images/hangman${wrong_guess.toString()}.jpg`;
+        image_source=`images/hangman${wrong_guess.toString()}.jpg`;
         document.getElementById("image").src=image_source;
         for(var i=0;i<guess_phrase.length;i++)
         {
@@ -136,7 +136,7 @@
         wrong_guess++;
         if(wrong_guess<=7)
         {
-            image_source=`../images/hangman${wrong_guess.toString()}.jpg`;
+            image_source=`images/hangman${wrong_guess.toString()}.jpg`;
             document.getElementById("image").src=image_source;
         }
 
