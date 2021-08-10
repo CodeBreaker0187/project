@@ -92,7 +92,7 @@
         wrong_guess++;
         if(wrong_guess<=7)
         {
-            image_source=`../images/hangman${wrong_guess.toString()}.jpg`;
+            image_source=`images/hangman${wrong_guess.toString()}.jpg`;
             document.getElementById("image").src=image_source;
         }
 
